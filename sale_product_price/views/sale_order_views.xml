@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form_inherit_gautam" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.gautam</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="pricelist_id" position="before">
+                <field name="pricelist_message" invisible="1"/>
+            </field>
+            <field name="pricelist_id" position="attributes">
+                <attribute name="context">{'customer_id': partner_id,'order_date' : date_order}</attribute>
+            </field>
+            <xpath expr="//notebook/page[@name='order_lines']/field/tree/field[@name='price_unit']" position="after">
+                <field name="pricelist_id" context="{'customer_id': parent.partner_id, 'order_date' : parent.date_order}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

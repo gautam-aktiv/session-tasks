@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_pricelist_view_inherit_gautam_21102024" model="ir.ui.view">
+        <field name="name">product.pricelist.form.inherit.gautam</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="customer_id"/>
+                <field name="start_from"/>
+                <field name="end_to"/>
+            </xpath>
+            <field name="min_quantity" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="date_start" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
