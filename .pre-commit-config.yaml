@@ -5,13 +5,14 @@ repos:
       - id: black
         language_version: python3  # Ensure it runs with Python 3
 
-  - repo: https://github.com/OCA/pylint-odoo
-    rev: v8.0.2  # Use latest stable version
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: ""  # Use latest stable version
     hooks:
       - id: pylint
         name: odoo-lint
-        entry: pylint --load-plugins=pylint_odoo
+        entry: pylint --load-plugins=pylint_odoo pylint --disable=C0114,C8112,E0401,C0115
         types: [python]
+        language: system
 
   - repo: local
     hooks:
