@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.3.0  # Use latest version
+    hooks:
+      - id: black
+        language_version: python3  # Ensure it runs with Python 3
+
+  - repo: https://github.com/OCA/pylint-odoo
+    rev: v8.0.2  # Use latest stable version
+    hooks:
+      - id: pylint
+        name: odoo-lint
+        entry: pylint --load-plugins=pylint_odoo
+        types: [python]
+
+  - repo: local
+    hooks:
+      - id: radon
+        name: radon complexity check
+        entry: radon cc -nc
+        language: system
+        types: [python]
