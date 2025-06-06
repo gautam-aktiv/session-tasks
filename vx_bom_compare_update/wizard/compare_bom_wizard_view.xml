@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_bom_compare_wizard" model="ir.ui.view">
+        <field name="name">compare.bom.wizard</field>
+        <field name="model">compare.bom.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Compare BoMs">
+                <group>
+                    <field name="bom_a_id"/>
+                    <field name="bom_b_id"/>
+                </group>
+                <footer>
+                    <button string="Compare" type="object" name="action_compare" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_compare_bom_wizard" model="ir.actions.act_window">
+        <field name="name">Compare BoMs</field>
+        <field name="res_model">compare.bom.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

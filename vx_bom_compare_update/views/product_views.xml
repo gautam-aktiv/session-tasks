@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- view used for product.product only -->
+    <record model="ir.ui.view" id="product_form_view_procurement_button">
+        <field name="name">product.product.procurement</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button string="Compare BOM" type="action"
+                        name="%(action_compare_bom_wizard)d"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
