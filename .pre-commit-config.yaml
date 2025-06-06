@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: pylint
         name: odoo-lint
-        entry: pylint --load-plugins=pylint_odoo pylint --disable=C0114,C8112,E0401,C0115
+        entry: pylint --load-plugins=pylint_odoo pylint --disable=C0114,C8112,E0401,C0115,R0903
         types: [python]
         language: system
 
